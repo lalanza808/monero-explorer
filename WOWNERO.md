@@ -2,6 +2,29 @@
 
 To get this explorer working for latest Wownero release, follow these steps:
 
+## Container image
+
+Image is on Docker Hub, `lalanza808/wownero-explorer:v0.11.3.0`
+
+Modify the below command for your liking
+
+```bash
+docker run --rm -it -p 8081:8081 -v ~/.wownero:/home/wownero/.wownero lalanza808/wownero-explorer:v0.11.3.0
+```
+
+Note to self:
+
+```bash
+docker buildx build \
+    --platform linux/amd64 \
+    -t lalanza808/wownero-explorer:latest \
+    -t lalanza808/wownero-explorer:v0.11.3.0 \
+    -f Dockerfile-wownero . \
+    --push
+```
+
+## Compilation
+
 ### Compile Wownero
 
 ```bash
